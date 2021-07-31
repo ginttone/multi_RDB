@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-
 res = requests.get('http://media.daum.net/economic/')
 
 import sqlite3
@@ -21,9 +20,6 @@ if res.status_code == 200:
         except:
             pass
 
-    import pandas as pd
-
-    df = pd.DataFrame(boston['data'], columns=boston['feature_names'])
     connect.commit()
 
 
